@@ -21,6 +21,14 @@ public class Feet {
         Feet other = (Feet) obj;
         return Double.doubleToLongBits(value) == Double.doubleToLongBits(other.value);
     }
+    public void setValue(int i) {
+        // TODO Auto-generated method stub
 
+    }
+
+    public String getValue() {
+        // TODO Auto-generated method stub
+        return null;
+    }
 }
 
