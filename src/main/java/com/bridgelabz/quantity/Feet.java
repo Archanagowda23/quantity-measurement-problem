@@ -1,10 +1,13 @@
 package com.bridgelabz.quantity;
 
 public class Feet {
-    private double value;
+    private double value = 0.0;
 
     public Feet(double value) {
         this.value = value;
+    }
+    public Feet(){
+
     }
 
     @Override

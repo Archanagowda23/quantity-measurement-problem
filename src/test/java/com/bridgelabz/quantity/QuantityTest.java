@@ -21,8 +21,23 @@ public class QuantityTest {
     @Test
     public void givenNullFeetValue_shouldReturnFalse() {
         Feet feet = new Feet(0.0);
+        Feet feet1 = new Feet(0.0);
         Assert.assertNotEquals(null, feet);
     }
+    //TC 1.3 Type Check
+    @Test
+    public void givenReferenceObject_WhenSame_ShouldReturnTrue() {
+        Feet feet = new Feet(0.0);
+        Assert.assertSame(feet, feet);
+    }
+
+    @Test
+    public void givenReferenceObject_WhenNotSame_ShouldReturnTrue() {
+        Feet feet = new Feet(0.0);
+        Feet feet1 = new Feet(0.0);
+        Assert.assertNotSame(feet, feet1);
+    }
 }
+
 
 
