@@ -11,5 +11,49 @@ public class QuantityTest {
         Feet feet2 = new Feet(0.0);
         Assert.assertEquals(feet1, feet2);
     }
+    @Test
+    public void given0Feetand1Feet_ShouldReturnNotEqual() {
+        Feet feet1 = new Feet(0.0);
+        Feet feet2 = new Feet(1.0);
+        Assert.assertNotEquals(feet1, feet2);
+    }
+    //TC 1.2 Null Check
+    @Test
+    public void givenNullFeetValue_shouldReturnFalse() {
+        Feet feet = new Feet(0.0);
+        Feet feet1 = new Feet(0.0);
+        Assert.assertNotEquals(null, feet);
+    }
+    //TC 1.3 Type Check
+    @Test
+    public void givenReferenceObject_WhenSame_ShouldReturnTrue() {
+        Feet feet = new Feet(0.0);
+        Assert.assertSame(feet, feet);
+    }
 
+    @Test
+    public void givenReferenceObject_WhenNotSame_ShouldReturnTrue() {
+        Feet feet = new Feet(0.0);
+        Feet feet1 = new Feet(0.0);
+        Assert.assertNotSame(feet, feet1);
+    }
+
+    //TC 1.4 Value Check For Equality
+
+    @Test
+    public void giveSameTypesOfObjects_shouldReturnEqual() {
+        Feet feet = new Feet();
+        Assert.assertEquals(feet, feet);
+    }
+
+    @Test
+    public void giveDifferentTypesOfObjects_shouldReturnNotEqual() {
+        Feet feet = new Feet();
+        Inch inch = new Inch();
+        Assert.assertNotEquals(feet, inch);
+    }
 }
+
+
+
+
