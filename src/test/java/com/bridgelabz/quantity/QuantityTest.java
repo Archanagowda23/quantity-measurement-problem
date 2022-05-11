@@ -17,5 +17,12 @@ public class QuantityTest {
         Feet feet2 = new Feet(1.0);
         Assert.assertNotEquals(feet1, feet2);
     }
+    //TC 1.2 Null Check
+    @Test
+    public void givenNullFeetValue_shouldReturnFalse() {
+        Feet feet = new Feet(0.0);
+        Assert.assertNotEquals(null, feet);
+    }
 }
+
 
