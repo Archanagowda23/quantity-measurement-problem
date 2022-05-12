@@ -142,7 +142,26 @@ public class QuantityTest {
         double value2 = new Quantitymeasurement().unitComparison(Units.INCH, 1.0);
         Assert.assertNotEquals(value1, value2, 0.0);
     }
+
+    //UC2
+    /*
+     * TC 1.11 for comparing lengths of 2 yard variables
+     */
+    @Test
+    public void given0YardAnd0YardWhenCompared_shouldReturnTrue() {
+        double value1 = quantityMeasurement.unitComparison(Units.YARD, 0.0);
+        double value2 = quantityMeasurement.unitComparison(Units.YARD, 0.0);
+        Assert.assertEquals(value1, value2, 0.0);
+    }
+
+    @Test
+    public void given0YardAnd1YardWhenCompared_shouldReturnFalse() {
+        double value1 = quantityMeasurement.unitComparison(Units.YARD, 0.0);
+        double value2 = quantityMeasurement.unitComparison(Units.YARD, 1.0);
+        Assert.assertNotEquals(value1, value2, 0.0);
+    }
 }
+
 
 
 
