@@ -142,7 +142,87 @@ public class QuantityTest {
         double value2 = new Quantitymeasurement().unitComparison(Units.INCH, 1.0);
         Assert.assertNotEquals(value1, value2, 0.0);
     }
+
+    //UC2
+    /*
+     * TC 1.11 for comparing lengths of 2 yard variables
+     */
+    @Test
+    public void given0YardAnd0YardWhenCompared_shouldReturnTrue() {
+        double value1 = quantityMeasurement.unitComparison(Units.YARD, 0.0);
+        double value2 = quantityMeasurement.unitComparison(Units.YARD, 0.0);
+        Assert.assertEquals(value1, value2, 0.0);
+    }
+
+    @Test
+    public void given0YardAnd1YardWhenCompared_shouldReturnFalse() {
+        double value1 = quantityMeasurement.unitComparison(Units.YARD, 0.0);
+        double value2 = quantityMeasurement.unitComparison(Units.YARD, 1.0);
+        Assert.assertNotEquals(value1, value2, 0.0);
+    }
+
+    /*
+     * TC 1.12 for comparing lengths 1: 3ft = 1yd
+     */
+    @Test
+    public void given3FeetAnd1YardWhenCompared_shouldReturnTrue() {
+        double value1 = quantityMeasurement.unitComparison(Units.FEET, 3.0);
+        double value2 = quantityMeasurement.unitComparison(Units.YARD, 1.0);
+        Assert.assertEquals(value1, value2, 0.0);
+    }
+
+    /*
+     * TC 1.13 for comparing lengths 2: 1 ft != 1 yd
+     */
+    @Test
+    public void given1FeetAnd1YardWhenCompared_shouldReturnFalse() {
+        double value1 = quantityMeasurement.unitComparison(Units.FEET, 1.0);
+        double value2 = quantityMeasurement.unitComparison(Units.YARD, 1.0);
+        Assert.assertNotEquals(value1, value2, 0.0);
+    }
+
+    /*
+     * TC 1.13 for comparing lengths 3: 1 in != 1 yd
+     */
+    @Test
+    public void given1InchAnd1YardWhenCompared_shouldReturnFalse() {
+        double value1 = quantityMeasurement.unitComparison(Units.INCH, 1.0);
+        double value2 = quantityMeasurement.unitComparison(Units.YARD, 1.0);
+        Assert.assertNotEquals(value1, value2, 0.0);
+    }
+
+    /*
+     * TC 1.14 for comparing lengths 4: 1 yd = 36 in
+     */
+    @Test
+    public void given1YardAnd36InchWhenCompared_shouldReturnTrue() {
+        double value2 = quantityMeasurement.unitComparison(Units.YARD, 1.0);
+        double value1 = quantityMeasurement.unitComparison(Units.INCH, 36.0);
+        Assert.assertEquals(value1, value2, 0.0);
+    }
+
+    /*
+     * TC 1.15 for comparing lengths 5: 36 in = 1 yd
+     */
+    @Test
+    public void given36InchAnd1YardWhenCompared_shouldReturnTrue() {
+        double value1 = quantityMeasurement.unitComparison(Units.INCH, 36.0);
+        double value2 = quantityMeasurement.unitComparison(Units.YARD, 1.0);
+        Assert.assertEquals(value1, value2, 0.0);
+    }
+
+    /*
+     * TC 1.16 for comparing lengths 6: 1 yd = 3 ft
+     */
+    @Test
+    public void given1Yard3FeetWhenCompared_shouldReturnTrue() {
+        double value2 = quantityMeasurement.unitComparison(Units.YARD, 1.0);
+        double value1 = quantityMeasurement.unitComparison(Units.FEET, 3.0);
+        Assert.assertEquals(value1, value2, 0.0);
+    }
 }
+
+
 
 
 
