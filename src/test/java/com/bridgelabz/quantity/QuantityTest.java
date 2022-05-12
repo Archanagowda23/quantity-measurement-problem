@@ -220,6 +220,17 @@ public class QuantityTest {
         double value1 = quantityMeasurement.unitComparison(Units.FEET, 3.0);
         Assert.assertEquals(value1, value2, 0.0);
     }
+
+    // UC3
+    /*
+     * For comparing lengths 2 inch = 5 cm variables
+     */
+    @Test
+    public void given1CMAnd1CMWhenCompared_shouldReturnTrue() {
+        double value2 = quantityMeasurement.unitComparison(Units.CM, 5.0);
+        double value1 = quantityMeasurement.unitComparison(Units.CM, 5.0);
+        Assert.assertEquals(value1, value2, 0.0);
+    }
 }
 
 
